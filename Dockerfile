@@ -13,7 +13,7 @@ ENV LC_ALL en_US.UTF-8
 
 # Enable Universe and Multiverse and install dependencies.
 
-RUN echo deb http://archive.ubuntu.com/ubuntu precise universe multiverse >> /etc/apt/sources.list; apt-get update; apt-get -y install autoconf automake build-essential git mercurial cmake libass-dev libgpac-dev libtheora-dev libtool libvdpau-dev libogg-dev libvorbis-dev flac libflac-dev pkg-config texi2html zlib1g-dev libmp3lame-dev wget yasm mkvtoolnix; apt-get clean
+RUN echo deb http://archive.ubuntu.com/ubuntu precise universe multiverse >> /etc/apt/sources.list; apt-get update; apt-get -y install autoconf automake build-essential git mercurial cmake libass-dev libgpac-dev libtheora-dev libogg-dev libvorbis-dev libmp3lame-dev flac libflac-dev libtool libvdpau-dev pkg-config texi2html zlib1g-dev wget yasm libcurl4-gnutls-dev libboost-all-dev libexpat1-dev liblzo2-dev libbz2-dev libmagic-dev ruby gettext; apt-get clean; gem install rake
 
 # Run build script
 
