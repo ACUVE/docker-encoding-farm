@@ -4,14 +4,14 @@
 
 cd /usr/local/src
 
-git clone --depth 1 https://github.com/l-smash/l-smash
-git clone --depth 1 git://git.videolan.org/x264.git
+git clone --depth 1 --recursive https://github.com/l-smash/l-smash
+git clone --depth 1 --recursive git://git.videolan.org/x264.git
 hg clone https://bitbucket.org/multicoreware/x265
-git clone --depth 1 git://github.com/mstorsjo/fdk-aac.git
-git clone --depth 1 https://chromium.googlesource.com/webm/libvpx
-git clone --depth 1 git://source.ffmpeg.org/ffmpeg
-git clone --depth 1 git://git.opus-codec.org/opus.git
-git clone --depth 1 https://github.com/mulx/aacgain.git
+git clone --depth 1 --recursive git://github.com/mstorsjo/fdk-aac.git
+git clone --depth 1 --recursive https://chromium.googlesource.com/webm/libvpx
+git clone --depth 1 --recursive git://source.ffmpeg.org/ffmpeg
+git clone --depth 1 --recursive git://git.opus-codec.org/opus.git
+git clone --depth 1 --recursive https://github.com/mulx/aacgain.git
 
 # Copy
 
