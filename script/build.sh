@@ -13,6 +13,10 @@ git clone --depth 1 git://source.ffmpeg.org/ffmpeg
 git clone --depth 1 git://git.opus-codec.org/opus.git
 git clone --depth 1 https://github.com/mulx/aacgain.git
 
+# Copy
+
+cp -a /usr/local/src/x265 /usr/local/src/x265_10
+
 # Build L-SMASH
 
 cd /usr/local/src/l-smash
@@ -72,6 +76,13 @@ cd /usr/local/src/aacgain/faad2
 ./configure && make -k -j 8 # some commands fail but build succeeds
 cd /usr/local/src/aacgain
 ./configure && make -j 8 && make install
+
+# Build x265_10
+
+cd /usr/local/src/x265_10/build/linux
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DENABLE_SHARED=OFF -DHIGH_BIT_DEPTH=ON ../../source
+make -j 8
+cp x265 /usr/bin/x265_10
 
 # Remove all tmpfile 
 
