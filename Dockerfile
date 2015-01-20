@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM ubuntu:utopic
 
 MAINTAINER ACUVE sub_chon@yahoo.co.jp
 
