@@ -13,6 +13,7 @@ git clone --depth 1 --recursive git://source.ffmpeg.org/ffmpeg
 git clone --depth 1 --recursive git://git.opus-codec.org/opus.git
 git clone --depth 1 --recursive https://github.com/mulx/aacgain.git
 git clone --depth 1 --recursive https://github.com/vapoursynth/vapoursynth.git
+git clone --depth 1 --recursive https://github.com/FFMS/ffms2.git
 
 # Copy
 
@@ -112,6 +113,15 @@ cd /usr/local/src/x265_10/build/linux
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DENABLE_SHARED=OFF -DHIGH_BIT_DEPTH=ON ../../source
 make -j 8
 cp x265 /usr/bin/x265_10
+
+# Build ffms2
+
+cd /usr/local/src/ffms2
+./autogen.sh
+./configure --prefix=/usr --enable-shared --disable-static --with-pic
+make -j 8
+make install
+ldconfig
 
 # Remove all tmpfile 
 
