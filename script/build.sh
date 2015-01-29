@@ -22,16 +22,18 @@ cp -a /usr/local/src/x265 /usr/local/src/x265_10
 # Build L-SMASH
 
 cd /usr/local/src/l-smash
-./configure
+./configure --prefix=/usr --enable-shared --disable-static
 make -j 8
 make install
+ldconfig
 
 # Build libx264
 
 cd /usr/local/src/x264
-./configure --enable-static
+./configure --prefix=/usr --enable-shared --enable-pic
 make -j 8
 make install
+ldconfig
 
 # Build libx265
 
@@ -39,58 +41,67 @@ cd /usr/local/src/x265/build/linux
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ../../source
 make -j 8
 make install
+ldconfig
 
 # Build libfdk-aac
 
 cd /usr/local/src/fdk-aac
-autoreconf -fiv
-./configure --disable-shared
+./autogen.sh
+./configure --prefix=/usr --enable-shared --disable-static --with-pic
 make -j 8
 make install
+ldconfig
 
 # Build libvpx
 
 cd /usr/local/src/libvpx
-./configure --disable-examples
+./configure --prefix=/usr --enable-shared --disable-static --enable-pic --disable-examples
 make -j 8
 make install
+ldconfig
 
 # Build libopus
 
 cd /usr/local/src/opus
 ./autogen.sh
-./configure --disable-shared
+./configure --prefix=/usr --disable-extra-programs
 make -j 8
 make install
+ldconfig
 
 # Build ffmpeg.
 
 cd /usr/local/src/ffmpeg
-./configure --extra-libs="-ldl" --enable-gpl --enable-libass --enable-libfdk-aac --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-libfreetype --enable-nonfree
+./configure --prefix=/usr --extra-libs="-ldl" --enable-gpl --enable-nonfree --enable-pic --enable-shared --disable-static --disable-debug --enable-libass --enable-fontconfig --enable-libfdk-aac --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265
 make -j 8
 make install
+ldconfig
 
 # Build mkvtoolnix
 
 cd /usr/local/src/mkvtoolnix
 ./autogen.sh
-./configure
+./configure --prefix=/usr
 rake
 rake install
 
 # Build aacgain
 
 cd /usr/local/src/aacgain/mp4v2
-./configure && make -k -j 8 # some commands fail but build succeeds
+./configure
+make -k -j 8
 cd /usr/local/src/aacgain/faad2
-./configure && make -k -j 8 # some commands fail but build succeeds
+./configure
+make -k -j 8
 cd /usr/local/src/aacgain
-./configure && make -j 8 && make install
+./configure
+make -j 8
+make install
 
 # Build x264_10
 
 cd /usr/local/src/x264_10
-./configure --enable-static --bit-depth=10
+./configure --enable-static --disable-shared --bit-depth=10
 make -j 8
 cp x264 /usr/bin/x264_10
 
