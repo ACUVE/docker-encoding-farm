@@ -12,6 +12,7 @@ git clone --depth 1 --recursive https://chromium.googlesource.com/webm/libvpx
 git clone --depth 1 --recursive git://source.ffmpeg.org/ffmpeg
 git clone --depth 1 --recursive git://git.opus-codec.org/opus.git
 git clone --depth 1 --recursive https://github.com/mulx/aacgain.git
+git clone --depth 1 --recursive https://github.com/vapoursynth/vapoursynth.git
 
 # Copy
 
@@ -88,6 +89,15 @@ cd /usr/local/src/aacgain
 ./configure
 make -j 8
 make install
+
+# Build VapourSynth
+
+cd /usr/local/src/vapoursynth
+./autogen.sh
+./configure --prefix=/usr --enable-shared --disable-static --disable-ocr
+make -j 8
+make install
+ldconfig
 
 # Build x264_10
 
