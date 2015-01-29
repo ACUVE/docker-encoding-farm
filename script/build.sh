@@ -5,7 +5,6 @@
 cd /usr/local/src
 
 git clone --depth 1 --recursive https://github.com/l-smash/l-smash
-git clone --depth 1 --recursive git://github.com/mbunkus/mkvtoolnix.git
 git clone --depth 1 --recursive git://git.videolan.org/x264.git
 hg clone https://bitbucket.org/multicoreware/x265
 git clone --depth 1 --recursive git://github.com/mstorsjo/fdk-aac.git
@@ -76,14 +75,6 @@ cd /usr/local/src/ffmpeg
 make -j 8
 make install
 ldconfig
-
-# Build mkvtoolnix
-
-cd /usr/local/src/mkvtoolnix
-./autogen.sh
-./configure --prefix=/usr
-rake
-rake install
 
 # Build aacgain
 
