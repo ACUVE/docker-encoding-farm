@@ -14,6 +14,7 @@ git clone --depth 1 --recursive git://git.opus-codec.org/opus.git
 git clone --depth 1 --recursive https://github.com/mulx/aacgain.git
 git clone --depth 1 --recursive https://github.com/vapoursynth/vapoursynth.git
 git clone --depth 1 --recursive https://github.com/FFMS/ffms2.git
+git clone --depth 1 --recursive https://github.com/VFR-maniac/L-SMASH-Works.git
 
 # Copy
 
@@ -122,6 +123,13 @@ cd /usr/local/src/ffms2
 make -j 8
 make install
 ldconfig
+
+# Build LSMASHSource for VapourSynth
+cd /usr/local/src/L-SMASH-Works/VapourSynth
+./configure --prefix=/usr --extra-cflags=-fPIC
+make -j 8
+cp -t /usr/lib vslsmashsource.so.*
+ln -s /usr/lib/vslsmashsource.so.* /usr/lib/vslsmashsource.so
 
 # Remove all tmpfile 
 
