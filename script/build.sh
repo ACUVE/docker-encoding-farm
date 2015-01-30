@@ -119,17 +119,17 @@ cp x265 /usr/bin/x265_10
 
 cd /usr/local/src/ffms2
 ./autogen.sh
-./configure --prefix=/usr --enable-shared --disable-static --with-pic
+./configure --enable-shared --disable-static --with-pic
 make -j 8
-make install
-ldconfig
+cp src/core/.libs/libffms2.la /usr/lib/vapoursynth/libffms2.la
+cp src/core/.libs/libffms2.so /usr/lib/vapoursynth/libffm2.so
 
 # Build LSMASHSource for VapourSynth
+
 cd /usr/local/src/L-SMASH-Works/VapourSynth
-./configure --prefix=/usr --extra-cflags=-fPIC
+./configure --extra-cflags=-fPIC
 make -j 8
-cp -t /usr/lib vslsmashsource.so.*
-ln -s /usr/lib/vslsmashsource.so.* /usr/lib/vslsmashsource.so
+cp vslsmashsource.so.* /usr/lib/vapoursynth/vslsmashsource.so
 
 # Remove all tmpfile 
 
