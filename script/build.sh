@@ -17,6 +17,7 @@ git clone --depth 1 --recursive https://github.com/FFMS/ffms2.git
 git clone --depth 1 --recursive https://github.com/VFR-maniac/L-SMASH-Works.git
 git clone --depth 1 --recursive https://github.com/VFR-maniac/VS-TNLMeans.git
 git clone --depth 1 --recursive https://github.com/HomeOfVapourSynthEvolution/VapourSynth-AddGrain.git
+git clone --depth 1 --recursive https://github.com/dubhater/vapoursynth-mvtools.git
 
 # Copy
 
@@ -146,6 +147,14 @@ cd /usr/local/src/VapourSynth-AddGrain
 ./configure --install=/usr/lib/vapoursynth
 make -j 8
 make install
+
+# Build vapoursynth-mvtools
+
+cd /usr/local/src/vapoursynth-mvtools
+./autogen.sh
+./configure --with-pic
+make -j 8
+cp .libs/libmvtools.so /usr/lib/vapoursynth/libmvtools.so
 
 # Remove all tmpfile 
 
