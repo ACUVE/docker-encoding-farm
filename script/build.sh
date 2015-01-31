@@ -16,6 +16,7 @@ git clone --depth 1 --recursive https://github.com/vapoursynth/vapoursynth.git
 git clone --depth 1 --recursive https://github.com/FFMS/ffms2.git
 git clone --depth 1 --recursive https://github.com/VFR-maniac/L-SMASH-Works.git
 git clone --depth 1 --recursive https://github.com/VFR-maniac/VS-TNLMeans.git
+git clone --depth 1 --recursive https://github.com/HomeOfVapourSynthEvolution/VapourSynth-AddGrain.git
 
 # Copy
 
@@ -138,6 +139,13 @@ cd /usr/local/src/VS-TNLMeans
 bash configure
 make -j 8
 cp vstnlmeans.so.* /usr/lib/vapoursynth/vstnlmeans.so
+
+# Build VapourSynth-AddGrain
+
+cd /usr/local/src/VapourSynth-AddGrain
+./configure --install=/usr/lib/vapoursynth
+make -j 8
+make install
 
 # Remove all tmpfile 
 
