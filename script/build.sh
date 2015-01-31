@@ -15,6 +15,7 @@ git clone --depth 1 --recursive https://github.com/mulx/aacgain.git
 git clone --depth 1 --recursive https://github.com/vapoursynth/vapoursynth.git
 git clone --depth 1 --recursive https://github.com/FFMS/ffms2.git
 git clone --depth 1 --recursive https://github.com/VFR-maniac/L-SMASH-Works.git
+git clone --depth 1 --recursive https://github.com/VFR-maniac/VS-TNLMeans.git
 
 # Copy
 
@@ -130,6 +131,13 @@ cd /usr/local/src/L-SMASH-Works/VapourSynth
 ./configure --extra-cflags=-fPIC
 make -j 8
 cp vslsmashsource.so.* /usr/lib/vapoursynth/vslsmashsource.so
+
+# Build VS-TNLMeans
+
+cd /usr/local/src/VS-TNLMeans
+bash configure
+make -j 8
+cp vstnlmeans.so.* /usr/lib/vapoursynth/vstnlmeans.so
 
 # Remove all tmpfile 
 
