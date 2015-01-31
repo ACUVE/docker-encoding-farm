@@ -124,8 +124,7 @@ cd /usr/local/src/ffms2
 ./autogen.sh
 ./configure --enable-shared --disable-static --with-pic
 make -j 8
-cp src/core/.libs/libffms2.la /usr/lib/vapoursynth/libffms2.la
-cp src/core/.libs/libffms2.so /usr/lib/vapoursynth/libffm2.so
+cp src/core/.libs/libffms2.so /usr/lib/vapoursynth/libffms2.so
 
 # Build LSMASHSource for VapourSynth
 
