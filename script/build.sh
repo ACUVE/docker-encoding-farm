@@ -9,8 +9,9 @@ git clone --depth 1 --recursive git://git.videolan.org/x264.git
 hg clone https://bitbucket.org/multicoreware/x265
 git clone --depth 1 --recursive git://github.com/mstorsjo/fdk-aac.git
 git clone --depth 1 --recursive https://chromium.googlesource.com/webm/libvpx
-git clone --depth 1 --recursive git://source.ffmpeg.org/ffmpeg
 git clone --depth 1 --recursive git://git.opus-codec.org/opus.git
+git clone --depth 1 --recursive https://github.com/qyot27/libutvideo
+git clone --depth 1 --recursive git://source.ffmpeg.org/ffmpeg
 git clone --depth 1 --recursive https://github.com/mulx/aacgain.git
 git clone --depth 1 --recursive https://github.com/vapoursynth/vapoursynth.git
 git clone --depth 1 --recursive https://github.com/FFMS/ffms2.git
@@ -74,10 +75,17 @@ make -j 8
 make install
 ldconfig
 
+# Build libutvideo
+cd /usr/local/src/libutvideo
+./configure --prefix=/usr --enable-pic --enable-shared --disable-static
+make -j 8
+make install
+ldconfig
+
 # Build ffmpeg.
 
 cd /usr/local/src/ffmpeg
-./configure --prefix=/usr --extra-libs="-ldl" --enable-gpl --enable-nonfree --enable-pic --enable-shared --disable-static --disable-debug --enable-avresample --enable-libass --enable-fontconfig --enable-libfdk-aac --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265
+./configure --prefix=/usr --extra-libs="-ldl" --enable-gpl --enable-nonfree --enable-pic --enable-shared --disable-static --disable-debug --enable-avresample --enable-libass --enable-fontconfig --enable-libfdk-aac --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-libutvideo
 make -j 8
 make install
 ldconfig
