@@ -16,7 +16,7 @@ git clone --depth 1 --recursive https://github.com/mulx/aacgain.git
 git clone --depth 1 --recursive https://github.com/vapoursynth/vapoursynth.git
 git clone --depth 1 --recursive https://github.com/FFMS/ffms2.git
 git clone --depth 1 --recursive https://github.com/VFR-maniac/L-SMASH-Works.git
-git clone --depth 1 --recursive https://github.com/VFR-maniac/VS-TNLMeans.git
+git clone --depth 1 --recursive https://github.com/VFR-maniac/VapourSynth-TNLMeans.git
 git clone --depth 1 --recursive https://github.com/HomeOfVapourSynthEvolution/VapourSynth-AddGrain.git
 git clone --depth 1 --recursive https://github.com/dubhater/vapoursynth-mvtools.git
 
@@ -141,9 +141,9 @@ cd /usr/local/src/L-SMASH-Works/VapourSynth
 make -j 8
 cp vslsmashsource.so.* /usr/lib/vapoursynth/vslsmashsource.so
 
-# Build VS-TNLMeans
+# Build VapourSynth-TNLMeans
 
-cd /usr/local/src/VS-TNLMeans
+cd /usr/local/src/VapourSynth-TNLMeans
 bash configure
 make -j 8
 cp vstnlmeans.so.* /usr/lib/vapoursynth/vstnlmeans.so
