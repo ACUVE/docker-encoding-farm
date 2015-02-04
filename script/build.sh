@@ -1,4 +1,5 @@
 #!/bin/bash
+set -xue
 
 # Fetch Sources
 
@@ -94,10 +95,10 @@ ldconfig
 
 cd /usr/local/src/aacgain/mp4v2
 ./configure
-make -k -j 8
+make -k -j 8 || :
 cd /usr/local/src/aacgain/faad2
 ./configure
-make -k -j 8
+make -k -j 8 || :
 cd /usr/local/src/aacgain
 ./configure
 make -j 8

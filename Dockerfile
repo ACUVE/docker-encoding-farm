@@ -16,6 +16,6 @@ RUN echo deb http://archive.ubuntu.com/ubuntu precise universe multiverse >> /et
 # Run build script
 
 ADD script/* /
-RUN ["/bin/bash", "-x", "/build.sh"]
+RUN ["/bin/bash", "/build.sh"]
 
 CMD ["/bin/bash"]
