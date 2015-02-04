@@ -18,6 +18,7 @@ git clone --depth 1 --recursive https://github.com/vapoursynth/vapoursynth.git
 git clone --depth 1 --recursive https://github.com/FFMS/ffms2.git
 git clone --depth 1 --recursive https://github.com/VFR-maniac/L-SMASH-Works.git
 git clone --depth 1 --recursive https://github.com/VFR-maniac/VapourSynth-TNLMeans.git
+git clone --depth 1 --recursive https://github.com/VFR-maniac/VapourSynth-FFT3DFilter.git
 git clone --depth 1 --recursive https://github.com/HomeOfVapourSynthEvolution/VapourSynth-AddGrain.git
 git clone --depth 1 --recursive https://github.com/dubhater/vapoursynth-mvtools.git
 
@@ -148,6 +149,13 @@ cd /usr/local/src/VapourSynth-TNLMeans
 ./configure
 make -j 8
 cp vstnlmeans.so.* /usr/lib/vapoursynth/vstnlmeans.so
+
+# Build VapourSynth-FFT3DFilter
+
+cd /usr/local/src/VapourSynth-FFT3DFilter
+./configure
+make -j 8
+cp vsfft3dfilter.so.* /usr/lib/vapoursynth/vsfft3dfilter.so
 
 # Build VapourSynth-AddGrain
 
