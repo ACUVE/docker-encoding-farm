@@ -145,7 +145,7 @@ cp vslsmashsource.so.* /usr/lib/vapoursynth/vslsmashsource.so
 # Build VapourSynth-TNLMeans
 
 cd /usr/local/src/VapourSynth-TNLMeans
-bash configure
+./configure
 make -j 8
 cp vstnlmeans.so.* /usr/lib/vapoursynth/vstnlmeans.so
 
