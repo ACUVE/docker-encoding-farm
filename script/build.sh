@@ -162,7 +162,3 @@ cd /usr/local/src/vapoursynth-mvtools
 ./configure --with-pic
 make -j 8
 cp .libs/libmvtools.so /usr/lib/vapoursynth/libmvtools.so
-
-# Remove all tmpfile 
-
-rm -rf /usr/local/src
