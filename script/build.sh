@@ -142,7 +142,7 @@ cp src/core/.libs/libffms2.so /usr/lib/vapoursynth/libffms2.so
 cd /usr/local/src/L-SMASH-Works/VapourSynth
 ./configure --extra-cflags=-fPIC
 make -j 8
-cp vslsmashsource.so.* /usr/lib/vapoursynth/vslsmashsource.so
+cp libvslsmashsource.so.* /usr/lib/vapoursynth/libvslsmashsource.so
 
 # Build VapourSynth-TNLMeans
 
