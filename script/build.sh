@@ -149,7 +149,7 @@ cp libvslsmashsource.so.* /usr/lib/vapoursynth/libvslsmashsource.so
 cd /usr/local/src/VapourSynth-TNLMeans
 ./configure
 make -j 8
-cp vstnlmeans.so.* /usr/lib/vapoursynth/vstnlmeans.so
+cp libvstnlmeans.so.* /usr/lib/vapoursynth/libvstnlmeans.so
 
 # Build VapourSynth-FFT3DFilter
 
