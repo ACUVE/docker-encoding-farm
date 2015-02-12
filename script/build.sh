@@ -22,6 +22,7 @@ git clone --depth 1 --recursive https://github.com/VFR-maniac/VapourSynth-FFT3DF
 git clone --depth 1 --recursive https://github.com/HomeOfVapourSynthEvolution/VapourSynth-AddGrain.git
 git clone --depth 1 --recursive https://github.com/HomeOfVapourSynthEvolution/VapourSynth-IT.git
 git clone --depth 1 --recursive https://github.com/dubhater/vapoursynth-mvtools.git
+git clone --depth 1 --recursive https://github.com/HomeOfVapourSynthEvolution/VapourSynth-DeLogo.git
 
 # Copy
 
@@ -179,3 +180,10 @@ cd /usr/local/src/vapoursynth-mvtools
 ./configure --with-pic
 make -j 8
 cp .libs/libmvtools.so /usr/lib/vapoursynth/libmvtools.so
+
+# Build VapourSynth-DeLogo
+
+cd /usr/local/src/VapourSynth-DeLogo
+./configure --install=/usr/lib/vapoursynth
+make -j 8
+make install
