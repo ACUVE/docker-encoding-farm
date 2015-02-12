@@ -156,7 +156,7 @@ cp libvstnlmeans.so.* /usr/lib/vapoursynth/libvstnlmeans.so
 cd /usr/local/src/VapourSynth-FFT3DFilter
 ./configure
 make -j 8
-cp vsfft3dfilter.so.* /usr/lib/vapoursynth/vsfft3dfilter.so
+cp libvsfft3dfilter.so.* /usr/lib/vapoursynth/libvsfft3dfilter.so
 
 # Build VapourSynth-AddGrain
 
