@@ -1,4 +1,4 @@
-FROM ubuntu:utopic
+FROM ubuntu:vivid
 
 MAINTAINER ACUVE sub_chon@yahoo.co.jp
 
