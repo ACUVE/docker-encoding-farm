@@ -169,7 +169,7 @@ make install
 # Build VapourSynth-IT
 
 cd /usr/local/src/VapourSynth-IT
-./configure --install=/usr/lib/vapoursynth --gcc
+./configure --install=/usr/lib/vapoursynth
 make -j 8
 make install
 
