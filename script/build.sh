@@ -8,6 +8,7 @@ cd /usr/local/src
 git clone --depth 1 --recursive https://github.com/l-smash/l-smash
 git clone --depth 1 --recursive git://git.videolan.org/x264.git
 hg clone https://bitbucket.org/multicoreware/x265
+git clone --depth 1 --recursive https://github.com/ultravideo/kvazaar.git
 git clone --depth 1 --recursive git://github.com/mstorsjo/fdk-aac.git
 git clone --depth 1 --recursive https://chromium.googlesource.com/webm/libvpx
 git clone --depth 1 --recursive git://git.opus-codec.org/opus.git
@@ -53,6 +54,13 @@ make -j 8
 make install
 ldconfig
 
+# Build libkvazaar
+
+cd /usr/local/src/kvazaar/src
+make -j 8
+make install
+ldconfig
+
 # Build libfdk-aac
 
 cd /usr/local/src/fdk-aac
@@ -89,7 +97,7 @@ ldconfig
 # Build ffmpeg.
 
 cd /usr/local/src/ffmpeg
-./configure --prefix=/usr --extra-libs="-ldl" --enable-gpl --enable-nonfree --enable-pic --enable-shared --disable-static --disable-debug --enable-avresample --enable-libass --enable-fontconfig --enable-libfdk-aac --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-libutvideo
+./configure --prefix=/usr --extra-libs="-ldl" --enable-gpl --enable-nonfree --enable-pic --enable-shared --disable-static --disable-debug --enable-avresample --enable-libass --enable-fontconfig --enable-libfdk-aac --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-libutvideo --enable-libkvazaar
 make -j 8
 make install
 ldconfig
