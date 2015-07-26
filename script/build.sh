@@ -28,7 +28,6 @@ git clone --depth 1 --recursive https://github.com/HomeOfVapourSynthEvolution/Va
 # Copy
 
 cp -a /usr/local/src/x264 /usr/local/src/x264_10
-cp -a /usr/local/src/x265 /usr/local/src/x265_10
 
 # Build L-SMASH
 
@@ -49,8 +48,9 @@ ldconfig
 # Build libx265
 
 cd /usr/local/src/x265/build/linux
-cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ../../source
-make -j 8
+sed -i -e 's|^cmake|cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr|g' multilib.sh
+MAKEFLAGS=-j8 ./multilib.sh
+cd 8bit
 make install
 ldconfig
 
@@ -130,13 +130,6 @@ cd /usr/local/src/x264_10
 ./configure --enable-static --disable-shared --bit-depth=10
 make -j 8
 cp x264 /usr/bin/x264_10
-
-# Build x265_10
-
-cd /usr/local/src/x265_10/build/linux
-cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DENABLE_SHARED=OFF -DHIGH_BIT_DEPTH=ON ../../source
-make -j 8
-cp x265 /usr/bin/x265_10
 
 # Build ffms2
 
