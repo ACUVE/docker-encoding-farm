@@ -11,7 +11,7 @@ hg clone https://bitbucket.org/multicoreware/x265
 git clone --depth 1 --recursive https://github.com/ultravideo/kvazaar.git
 git clone --depth 1 --recursive git://github.com/mstorsjo/fdk-aac.git
 git clone --depth 1 --recursive https://chromium.googlesource.com/webm/libvpx
-git clone --depth 1 --recursive git://git.opus-codec.org/opus.git
+git clone --depth 1 --recursive https://github.com/xiph/opus.git
 git clone --depth 1 --recursive https://github.com/qyot27/libutvideo
 git clone --depth 1 --recursive git://source.ffmpeg.org/ffmpeg
 git clone --depth 1 --recursive https://github.com/mulx/aacgain.git
