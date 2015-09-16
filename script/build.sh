@@ -13,6 +13,7 @@ git clone --depth 1 --recursive git://github.com/mstorsjo/fdk-aac.git
 git clone --depth 1 --recursive https://chromium.googlesource.com/webm/libvpx
 git clone --depth 1 --recursive https://github.com/xiph/opus.git
 git clone --depth 1 --recursive https://github.com/qyot27/libutvideo
+git clone --depth 1 --recursive https://github.com/georgmartius/vid.stab.git
 git clone --depth 1 --recursive git://source.ffmpeg.org/ffmpeg
 git clone --depth 1 --recursive https://github.com/mulx/aacgain.git
 git clone --depth 1 --recursive https://github.com/vapoursynth/vapoursynth.git
@@ -101,10 +102,17 @@ make -j 8
 make install
 ldconfig
 
+# Build libvidstab
+cd /usr/local/src/vid.stab
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr .
+make -j 8
+make install
+ldconfig
+
 # Build ffmpeg.
 
 cd /usr/local/src/ffmpeg
-./configure --prefix=/usr --extra-libs="-ldl" --enable-gpl --enable-nonfree --enable-pic --enable-shared --disable-static --disable-debug --enable-avresample --enable-libass --enable-fontconfig --enable-libfdk-aac --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-libutvideo --enable-libkvazaar
+./configure --prefix=/usr --extra-libs="-ldl" --enable-gpl --enable-nonfree --enable-pic --enable-shared --disable-static --disable-debug --enable-avresample --enable-libass --enable-fontconfig --enable-libfdk-aac --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-libutvideo --enable-libkvazaar --enable-libvidstab
 make -j 8
 make install
 ldconfig
