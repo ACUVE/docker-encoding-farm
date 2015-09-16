@@ -45,6 +45,13 @@ make -j 8
 make install
 ldconfig
 
+# Build x264_10
+
+cd /usr/local/src/x264_10
+./configure --enable-static --disable-shared --bit-depth=10
+make -j 8
+cp x264 /usr/bin/x264_10
+
 # Build libx265
 
 cd /usr/local/src/x265/build/linux
@@ -123,13 +130,6 @@ cd /usr/local/src/vapoursynth
 make -j 8
 make install
 ldconfig
-
-# Build x264_10
-
-cd /usr/local/src/x264_10
-./configure --enable-static --disable-shared --bit-depth=10
-make -j 8
-cp x264 /usr/bin/x264_10
 
 # Build ffms2
 
