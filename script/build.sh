@@ -16,6 +16,7 @@ git clone --depth 1 --recursive https://github.com/qyot27/libutvideo
 git clone --depth 1 --recursive https://github.com/georgmartius/vid.stab.git
 git clone --depth 1 --recursive git://source.ffmpeg.org/ffmpeg
 git clone --depth 1 --recursive https://github.com/mulx/aacgain.git
+git clone --depth 1 --recursive https://github.com/sekrit-twc/zimg.git
 git clone --depth 1 --recursive https://github.com/vapoursynth/vapoursynth.git
 git clone --depth 1 --recursive https://github.com/FFMS/ffms2.git
 git clone --depth 1 --recursive https://github.com/VFR-maniac/L-SMASH-Works.git
@@ -129,6 +130,14 @@ cd /usr/local/src/aacgain
 ./configure
 make -j 8
 make install
+
+# Build zimg
+cd /usr/local/src/zimg
+./autogen.sh
+./configure --prefix=/usr --enable-shared --disable-static --with-pic
+make -j 8
+make install
+ldconfig
 
 # Build VapourSynth
 
