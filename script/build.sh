@@ -65,7 +65,9 @@ ldconfig
 
 # Build libkvazaar
 
-cd /usr/local/src/kvazaar/src
+cd /usr/local/src/kvazaar
+./autogen.sh
+./configure
 make -j 8
 make install
 ldconfig
